@@ -1,7 +1,8 @@
-package com.marquez.poke_tinder
+package com.marquez.poke_tinder.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.marquez.poke_tinder.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
