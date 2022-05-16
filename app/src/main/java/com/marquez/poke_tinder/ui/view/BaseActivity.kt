@@ -1,10 +1,9 @@
-package com.marquez.poke_tinder.activity
+package com.marquez.poke_tinder.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.viewbinding.ViewBinding
-import com.marquez.poke_tinder.R
 
 abstract class BaseActivity<B : ViewBinding>(val bindingFactory: (LayoutInflater)-> B) : AppCompatActivity() {
 

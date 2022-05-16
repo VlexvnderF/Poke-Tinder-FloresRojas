@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.LoginActivity">
+    tools:context=".ui.view.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -78,16 +78,21 @@
         android:layout_height="match_parent">
 
     </LinearLayout>
-    <TextView
-        android:id="@+id/txtVista"
-        android:layout_width="325dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.651"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"></TextView>
+    <Button
+        android:id="@+id/btnRegister2"
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/background_rounded_edit_text"
+        android:text="Ir a registrar"
+        android:textAllCaps="false"
+        android:onClick="register"
+        android:textColor="@android:color/holo_red_dark"
+        app:backgroundTint="#f0f0f0" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -103,5 +108,9 @@
         android:onClick="startLogin"
         android:textColor="@android:color/holo_red_dark"
         app:backgroundTint="#f0f0f0" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
