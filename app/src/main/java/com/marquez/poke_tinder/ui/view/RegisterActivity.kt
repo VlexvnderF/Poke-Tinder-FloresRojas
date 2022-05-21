@@ -4,10 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.marquez.poke_tinder.data.User
 import com.marquez.poke_tinder.databinding.ActivityRegisterBinding
 import com.marquez.poke_tinder.ui.viewmodel.RegisterViewModel
-import com.marquez.poke_tinder.util.SharedPreferenceUtil
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegisterBinding::inflate){
 

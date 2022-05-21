@@ -1,9 +1,6 @@
 package com.marquez.poke_tinder.util
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.marquez.poke_tinder.R
-import com.marquez.poke_tinder.data.Onboarding
+import com.marquez.poke_tinder.data.model.Onboarding
 
 class Mock {
     fun getOnboarding() = listOf(

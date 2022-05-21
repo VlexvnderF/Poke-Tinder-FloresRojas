@@ -2,12 +2,9 @@ package com.marquez.poke_tinder.util
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
 import com.google.gson.Gson
-import com.marquez.poke_tinder.R
-import com.marquez.poke_tinder.data.User
+import com.marquez.poke_tinder.data.model.User
 
 class SharedPreferenceUtil{
     companion object {

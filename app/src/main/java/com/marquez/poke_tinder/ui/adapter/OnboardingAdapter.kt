@@ -1,14 +1,15 @@
-package com.marquez.poke_tinder.adapter
+package com.marquez.poke_tinder.ui.adapter
 
-import android.view.SurfaceHolder
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.marquez.poke_tinder.R
-import com.marquez.poke_tinder.data.Onboarding
+
+import com.marquez.poke_tinder.data.model.Onboarding
 import com.marquez.poke_tinder.databinding.ItemOnboardingBinding
 import com.marquez.poke_tinder.util.inflate
+
 
 class OnboardingAdapter(val list: List<Onboarding>) :
     RecyclerView.Adapter<OnboardingAdapter.OnboardingHolder>(){

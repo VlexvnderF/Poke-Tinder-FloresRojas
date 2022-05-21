@@ -1,8 +1,8 @@
-package com.marquez.poke_tinder.data
+package com.marquez.poke_tinder.data.model
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.marquez.poke_tinder.R
+
 
 data class Onboarding (
     val id:Int,

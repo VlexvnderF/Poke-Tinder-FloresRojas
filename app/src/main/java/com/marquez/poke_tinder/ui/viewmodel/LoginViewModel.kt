@@ -3,7 +3,7 @@ package com.marquez.poke_tinder.ui.viewmodel
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.marquez.poke_tinder.data.User
+import com.marquez.poke_tinder.data.model.User
 import com.marquez.poke_tinder.util.SharedPreferenceUtil
 
 class LoginViewModel(private val context: Context): ViewModel(){
@@ -11,6 +11,7 @@ class LoginViewModel(private val context: Context): ViewModel(){
 
     val emptyFieldsError = MutableLiveData<Boolean>()
     val fieldsAuthenticateError = MutableLiveData<Boolean>()
+
     val goSuccesActivity = MutableLiveData<Boolean>()
 
     fun onCreate() {

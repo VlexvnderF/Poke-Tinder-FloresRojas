@@ -4,10 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.marquez.poke_tinder.data.User
 import com.marquez.poke_tinder.databinding.ActivityLoginBinding
 import com.marquez.poke_tinder.ui.viewmodel.LoginViewModel
-import com.marquez.poke_tinder.util.SharedPreferenceUtil
+
 
 class LoginActivity:BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate) {
 

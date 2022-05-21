@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.marquez.poke_tinder.R
-import com.marquez.poke_tinder.adapter.OnboardingAdapter
+import com.marquez.poke_tinder.ui.adapter.OnboardingAdapter
 import com.marquez.poke_tinder.databinding.ActivityOnboardingBinding
 import com.marquez.poke_tinder.util.Mock
 import com.marquez.poke_tinder.util.SharedPreferenceUtil
