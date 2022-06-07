@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import com.bumptech.glide.load.engine.Initializable
 import com.marquez.poke_tinder.R
 import com.marquez.poke_tinder.databinding.FragmentHomeBinding
+import com.marquez.poke_tinder.domain.model.MyPokemon
 import com.marquez.poke_tinder.domain.model.Pokemon
 import com.marquez.poke_tinder.ui.adapter.PokemonAdapter
 import com.marquez.poke_tinder.ui.viewmodel.HomeViewModel
@@ -22,29 +23,32 @@ import com.yuyakaido.android.cardstackview.*
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate),
-CardStackListener, PokemonAdapter.Callback {
+class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate),
+    CardStackListener, PokemonAdapter.Callback{
 
-    companion object {
+    companion object{
         fun newInstance() = HomeFragment()
     }
 
     private var listPokemon:List<Pokemon> = emptyList()
-
     private val homeViewModel: HomeViewModel by viewModels()
-    private val manager by lazy { CardStackLayoutManager(context, this) }
-    private val adapter by lazy { PokemonAdapter(listPokemon, this) }
+    //private val mainViewModel: HomeViewModel by viewModels()
+    private val manager by lazy { CardStackLayoutManager(context,this) }
+    private val adapter by lazy {PokemonAdapter(listPokemon, this)}
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initializeTinderCard()
         observeValues()
         homeViewModel.onCreate()
+        //mainViewModel.onCreate()
+
     }
 
-    private fun observeValues() {
-        binding.floatingActionButton.setOnClickListener {
-            // Rewind
+    private fun observeValues(){
+        binding.floatingActionButton.setOnClickListener{
+            //Rewind
             val setting = RewindAnimationSetting.Builder()
                 .setDirection(Direction.Bottom)
                 .setDuration(Duration.Normal.duration)
@@ -54,8 +58,8 @@ CardStackListener, PokemonAdapter.Callback {
             binding.rvTinderPokemon.rewind()
         }
 
-        binding.floatingActionButton2.setOnClickListener {
-            // Skip
+        binding.floatingActionButton2.setOnClickListener{
+            //Skip
             val setting = SwipeAnimationSetting.Builder()
                 .setDirection(Direction.Left)
                 .setDuration(Duration.Normal.duration)
@@ -65,8 +69,8 @@ CardStackListener, PokemonAdapter.Callback {
             binding.rvTinderPokemon.swipe()
         }
 
-        binding.floatingActionButton3.setOnClickListener {
-            // Like
+        binding.floatingActionButton3.setOnClickListener{
+            //like
             val setting = SwipeAnimationSetting.Builder()
                 .setDirection(Direction.Right)
                 .setDuration(Duration.Normal.duration)
@@ -76,18 +80,18 @@ CardStackListener, PokemonAdapter.Callback {
             binding.rvTinderPokemon.swipe()
         }
 
-        homeViewModel.isLoading.observe(this) {
+        homeViewModel.isLoading.observe(this){
             binding.progressBar.isVisible = it
         }
 
-        homeViewModel.pokemonList.observe(this) {
+        homeViewModel.pokemonList.observe(this){
             adapter.list = it
             adapter.notifyDataSetChanged()
-
             binding.floatingActionButton.visibility = View.VISIBLE
             binding.floatingActionButton2.visibility = View.VISIBLE
             binding.floatingActionButton3.visibility = View.VISIBLE
         }
+
     }
 
     private fun initializeTinderCard() {
@@ -103,6 +107,7 @@ CardStackListener, PokemonAdapter.Callback {
         manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual)
         manager.setOverlayInterpolator(LinearInterpolator())
 
+
         binding.rvTinderPokemon.layoutManager = manager
         binding.rvTinderPokemon.adapter = adapter
         binding.rvTinderPokemon.itemAnimator.apply {
@@ -111,33 +116,32 @@ CardStackListener, PokemonAdapter.Callback {
             }
         }
     }
+    override fun onClickPokemonInformation(pokemon: Pokemon){
 
-    override fun onCardDragging(direction: Direction?, ratio: Float) {
-        //TODO("Not yet implemented")
+    }
+    override fun onCardDragging(direction: Direction?, ratio: Float){
     }
 
-    override fun onCardSwiped(direction: Direction?) {
-        //TODO("Not yet implemented")
-    }
+    override fun onCardSwiped(direction: Direction?){
+        if(direction == Direction.Right){
+            val pokemon = adapter.list[manager.topPosition -1]
+            val myPokemon = MyPokemon(
+                name = pokemon.name,
+                image = pokemon.getPokemonImage(),
+                idPokemon = pokemon.getPokemonId()
+            )
+            homeViewModel.savePokemonUseCase(myPokemon)
+        }
 
-    override fun onCardRewound() {
-        //TODO("Not yet implemented")
     }
-
-    override fun onCardCanceled() {
-        //TODO("Not yet implemented")
+    override fun onCardRewound(){
     }
-
-    override fun onCardAppeared(view: View?, position: Int) {
-        //TODO("Not yet implemented")
+    override fun onCardCanceled(){
     }
+    override fun onCardAppeared(view: View?, position: Int){
 
-    override fun onCardDisappeared(view: View?, position: Int) {
-        //TODO("Not yet implemented")
     }
-
-    override fun onClickPokemonInformation(pokemon: Pokemon) {
-        //TODO("Not yet implemented")
+    override fun onCardDisappeared(view: View?, position: Int){
     }
 
 }

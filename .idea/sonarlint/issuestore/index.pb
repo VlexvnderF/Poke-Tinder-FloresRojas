@@ -9,10 +9,6 @@ X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-}
-Mapp/src/main/java/com/marquez/poke_tinder/domain/usecase/GetPokemonUseCase.kt,4\9\497fb9012e9291933f059967c9dccf33307a847a
 f
 6app/src/main/java/com/marquez/poke_tinder/util/Mock.kt,9\e\9eea07f8c6bb4b1478a78a87daa5af39685e00c0
 r
@@ -21,18 +17,12 @@ y
 Iapp/src/main/java/com/marquez/poke_tinder/ui/adapter/OnboardingAdapter.kt,2\7\27d9a9a5b7e2fc6ae14f31721218fc7c14d60667
 v
 Fapp/src/main/java/com/marquez/poke_tinder/ui/adapter/PokemonAdapter.kt,2\9\29a393a00c7219aa8ff784ae67303d86fa63c5b8
-j
-:app/src/main/java/com/marquez/poke_tinder/di/RoomModule.kt,5\f\5f8c8150eb5c7942338a79d2f83b129ef1d7d495
 v
 Fapp/src/main/java/com/marquez/poke_tinder/util/SharedPreferenceUtil.kt,0\4\04095aebd3bc38c673be4eead190e9699b5872b4
 m
 =app/src/main/java/com/marquez/poke_tinder/di/NetworkModule.kt,4\2\4253159d131360f35474d5ecd30561b12ddef3be
 q
 Aapp/src/main/java/com/marquez/poke_tinder/domain/model/Pokemon.kt,1\3\13dad8ca7a21677502e093688d27577cf661efb6
-t
-Dapp/src/main/java/com/marquez/poke_tinder/data/network/PokemonApi.kt,b\9\b9aa75647afe362a4dc763ab0050258ae76dbb22
-s
-Capp/src/main/java/com/marquez/poke_tinder/data/PokemonRepository.kt,5\d\5d67773848ea24e52c911d8e9d7a9084ebd8fe6d
 x
 Happ/src/main/java/com/marquez/poke_tinder/data/network/PokemonService.kt,8\a\8adcf06fcb9725b9e9fbc4f0558640d21b419832
 m
@@ -53,15 +43,13 @@ Kapp/src/main/java/com/marquez/poke_tinder/ui/viewmodel/RegisterViewModel.kt,5\
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 q
 Aapp/src/main/java/com/marquez/poke_tinder/ui/view/BaseFragment.kt,e\f\ef64a3902da3cb9d923f6b7bf16268c4cd9d06bf
-u
-Eapp/src/main/java/com/marquez/poke_tinder/ui/view/FavoriteFragment.kt,8\6\86af16c398e9a71f8754ae028986096dcddc0dce
-{
-Kapp/src/main/java/com/marquez/poke_tinder/ui/viewmodel/FavoriteViewModel.kt,c\7\c79700d195fa5250baff124276131a8634734453
-q
-Aapp/src/main/java/com/marquez/poke_tinder/ui/view/HomeFragment.kt,b\4\b4c45bb746bd2cdcc8db5c874bb2791b07ee9603
-w
-Gapp/src/main/java/com/marquez/poke_tinder/ui/viewmodel/HomeViewModel.kt,0\e\0e2ba9f77eabfb72727678e16afae7f8390ddcd6
 w
 Gapp/src/main/java/com/marquez/poke_tinder/ui/viewmodel/InfoViewModel.kt,c\c\ccb3c15cab8ad764cbb32a3366cae93ad35e3244
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 q
 Aapp/src/main/java/com/marquez/poke_tinder/ui/view/MainActivity.kt,7\1\71eccafae71c3dabd5182e97706acf3c3ca8e468
+q
+Aapp/src/main/java/com/marquez/poke_tinder/ui/view/InfoFragment.kt,5\d\5d8510b1bed58bb41a5bd610331b58eb9bf922ed
+}
+Mapp/src/main/java/com/marquez/poke_tinder/domain/usecase/GetPokemonUseCase.kt,4\9\497fb9012e9291933f059967c9dccf33307a847a
