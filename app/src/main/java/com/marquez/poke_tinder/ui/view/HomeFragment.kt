@@ -1,5 +1,6 @@
 package com.marquez.poke_tinder.ui.view
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -24,18 +25,17 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate),
-    CardStackListener, PokemonAdapter.Callback{
-
-    companion object{
-        fun newInstance() = HomeFragment()
-    }
+    CardStackListener, PokemonAdapter.Callback {
 
     private var listPokemon:List<Pokemon> = emptyList()
-    private val homeViewModel: HomeViewModel by viewModels()
-    //private val mainViewModel: HomeViewModel by viewModels()
-    private val manager by lazy { CardStackLayoutManager(context,this) }
-    private val adapter by lazy {PokemonAdapter(listPokemon, this)}
 
+    private val homeViewModel: HomeViewModel by viewModels()
+
+    //private val mainViewModel: HomeViewModel by viewModels()
+
+    private val manager by lazy { CardStackLayoutManager(context,this) }
+
+    private val adapter by lazy {PokemonAdapter(listPokemon, this)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +43,6 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
         observeValues()
         homeViewModel.onCreate()
         //mainViewModel.onCreate()
-
     }
 
     private fun observeValues(){
@@ -117,7 +116,9 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
         }
     }
     override fun onClickPokemonInformation(pokemon: Pokemon){
-
+        val intent = Intent(context, PokemonDetailActivity::class.java)
+        intent.putExtra("ID_POKEMON", pokemon.getPokemonId())
+        startActivity(intent)
     }
     override fun onCardDragging(direction: Direction?, ratio: Float){
     }

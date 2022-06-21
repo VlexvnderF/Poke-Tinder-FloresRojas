@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "549110623195",
+    "project_id": "poke-tinder-90f53",
+    "storage_bucket": "poke-tinder-90f53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549110623195:android:580aa8b4d0aa998720d5fe",
+        "android_client_info": {
+          "package_name": "com.marquez.poke_tinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549110623195-j0dmqvii7bkllv056fm9k8ul9t9ljpsq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTVAha_dh4tehvexV4dNCUYSswC3ftfzQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549110623195-j0dmqvii7bkllv056fm9k8ul9t9ljpsq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
