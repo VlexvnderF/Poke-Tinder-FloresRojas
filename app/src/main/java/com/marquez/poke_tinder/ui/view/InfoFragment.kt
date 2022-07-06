@@ -33,9 +33,10 @@ class InfoFragment : BaseFragment<FragmentInfoBinding>(FragmentInfoBinding::infl
         webView.settings.javaScriptEnabled = true
 
         webView.webViewClient = PokemonWebClient()
-        savedInstanceState?.let {
-            webView.restoreState(it)
-        }?:webView.loadUrl(url)
+
+        viewModel.getUrlPokemon().observe(viewLifecycleOwner) {
+            webView.loadUrl(it)
+        }
     }
 
     inner class PokemonWebClient: WebViewClient() {
@@ -45,5 +46,4 @@ class InfoFragment : BaseFragment<FragmentInfoBinding>(FragmentInfoBinding::infl
                     "document.getElementByClassName('navbar top')[0].style.display='none'; })()")
         }
     }
-
 }
